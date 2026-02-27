@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface AccountController {
 
     @GetMapping("/accounts/healthCheck")
-    public ResponseEntity<String> healthCheck();
+    public ResponseEntity<Void> healthCheck();
 
     @PostMapping("/accounts")
     public ResponseEntity<Void> create(
@@ -27,10 +27,10 @@ public interface AccountController {
     );
 
     @GetMapping("/accounts")
-    public ResponseEntity<List<AccountOut>> listAll();
+    public ResponseEntity<List<AccountOut>> findAll();
 
     @GetMapping("/accounts/{id}")
-    public ResponseEntity<AccountOut> listById(
+    public ResponseEntity<AccountOut> findById(
         @PathVariable String id
     );    
 
